@@ -1,5 +1,6 @@
 package com.androidjson.inbox;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.design.widget.NavigationView;
 import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.MenuItem;
@@ -116,13 +118,32 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
                 Toast.makeText(this,"This is settings",Toast.LENGTH_SHORT).show();
                 break;
             case R.id.logout :
-                Toast.makeText(this,"You have successfully logged out",Toast.LENGTH_SHORT).show();
-                finish();
+                AlertDialog.Builder mBuilder = new AlertDialog.Builder(category.this);
+                mBuilder.setTitle("Sign out");
+                mBuilder.setMessage(R.string.confirm);
+                mBuilder.setPositiveButton("Yes, log out", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                //End Activity
+                                finish();
+                            }
+                        });
+                mBuilder.setNegativeButton("No", null);
+                AlertDialog ad = mBuilder.create();
+                ad.setIcon(R.drawable.ic_sentiment_dissatisfied_black_24dp);
+                ad.show();
                 break;
         }
         return false;
     }
     //To here *******
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(this,"You have successfully logged out",Toast.LENGTH_SHORT).show();
+    }
 }
 
 
