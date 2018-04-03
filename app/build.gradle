@@ -31,4 +31,6 @@ dependencies {
     compile 'com.felipecsl:gifimageview:2.1.0'
     compile 'commons-io:commons-io:2.4'
     compile 'com.squareup.picasso:picasso:2.5.2'
+    //Add
+    compile 'com.android.support:design:25.1.0'
 }

@@ -35,5 +35,10 @@
         "interact, and exist in space and in relation to each other. Realistic lighting shows "
         "seams, divides space, and indicates moving parts.\n\n"
     </string>
+
+    <!-- Add these two open and close strings -->
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+
     <string name="title_activity_menu">ActivityMenu</string>
 </resources>

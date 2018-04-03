@@ -3,12 +3,20 @@ package com.androidjson.inbox;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class category extends AppCompatActivity {
+public class category extends AppCompatActivity implements OnNavigationItemSelectedListener {
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
 
     CardView busi, ente, heal, scie, spor, tech;
 
@@ -16,6 +24,16 @@ public class category extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
+        //Add from here *********
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
+        mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        //To here ******
 
         busi = (CardView) findViewById(R.id.bus);
         ente = (CardView) findViewById(R.id.ent);
@@ -72,6 +90,39 @@ public class category extends AppCompatActivity {
             }
         });
     }
+
+    //From here also *****
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (mToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id) {
+            case R.id.profile :
+                Toast.makeText(this,"This is profile",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.aboutus :
+                Toast.makeText(this,"This is Aboutus",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.settings :
+                Toast.makeText(this,"This is settings",Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.logout :
+                Toast.makeText(this,"You have successfully logged out",Toast.LENGTH_SHORT).show();
+                finish();
+                break;
+        }
+        return false;
+    }
+    //To here *******
 }
 
 
