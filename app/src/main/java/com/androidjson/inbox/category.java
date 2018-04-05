@@ -121,7 +121,7 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(category.this);
                 mBuilder.setTitle("Sign out");
                 mBuilder.setMessage(R.string.confirm);
-                mBuilder.setPositiveButton("Yes, log out", new DialogInterface.OnClickListener() {
+                mBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //End Activity
