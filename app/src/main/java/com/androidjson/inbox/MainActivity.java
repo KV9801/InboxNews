@@ -20,8 +20,7 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase sqLiteDatabaseObj;
     SQLiteHelper sqLiteHelper;
     Cursor cursor;
-    String TempPassword = "NOT_FOUND" ;
-    public static final String UserEmail = "";
+    String NameString, TempPassword = "NOT_FOUND" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
                     // Storing Password associated with entered email.
                     TempPassword = cursor.getString(cursor.getColumnIndex(SQLiteHelper.Table_Column_3_Password));
+                    NameString = cursor.getString(cursor.getColumnIndex(SQLiteHelper.Table_Column_1_Name));
 
                     // Closing cursor.
                     cursor.close();
@@ -133,7 +133,8 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, category.class);
 
             // Sending Email to Dashboard Activity using intent.
-            intent.putExtra(UserEmail, EmailHolder);
+            intent.putExtra("email", EmailHolder);
+            intent.putExtra("name", NameString);
 
             startActivity(intent);
 

@@ -14,18 +14,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class category extends AppCompatActivity implements OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
+    TextView NameView, EmailView;
+    String Name, Email;
     CardView busi, ente, heal, scie, spor, tech;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
+        Intent intent = getIntent();
+        Email = intent.getStringExtra("email");
+        Name = intent.getStringExtra("name");
 
         //Add from here *********
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
@@ -96,6 +103,12 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
     //From here also *****
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        NameView = (TextView) findViewById(R.id.menu_name);
+        EmailView = (TextView) findViewById(R.id.menu_email);
+
+        NameView.setText(Name);
+        EmailView.setText(Email);
+
         if (mToggle.onOptionsItemSelected(item)) {
             return true;
         }
