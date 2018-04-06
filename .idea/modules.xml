@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/InboxNews.iml" filepath="$PROJECT_DIR$/InboxNews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/InboxNews-app.iml" filepath="$PROJECT_DIR$/app/InboxNews-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StudioProjects-InboxNews.iml" filepath="$PROJECT_DIR$/StudioProjects-InboxNews.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
