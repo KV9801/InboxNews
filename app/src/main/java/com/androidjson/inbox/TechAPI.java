@@ -75,13 +75,13 @@ public class TechAPI extends AppCompatActivity {
 
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        HashMap<String, String> map = new HashMap<String, String>();
-                        map.put(KEY_AUTHOR, jsonObject.optString(KEY_AUTHOR).toString());
-                        map.put(KEY_TITLE, jsonObject.optString(KEY_TITLE).toString());
-                        map.put(KEY_DESCRIPTION, jsonObject.optString(KEY_DESCRIPTION).toString());
-                        map.put(KEY_URL, jsonObject.optString(KEY_URL).toString());
-                        map.put(KEY_URLTOIMAGE, jsonObject.optString(KEY_URLTOIMAGE).toString());
-                        map.put(KEY_PUBLISHEDAT, jsonObject.optString(KEY_PUBLISHEDAT).toString());
+                        HashMap<String, String> map = new HashMap<>();
+                        map.put(KEY_AUTHOR, jsonObject.optString(KEY_AUTHOR));
+                        map.put(KEY_TITLE, jsonObject.optString(KEY_TITLE));
+                        map.put(KEY_DESCRIPTION, jsonObject.optString(KEY_DESCRIPTION));
+                        map.put(KEY_URL, jsonObject.optString(KEY_URL));
+                        map.put(KEY_URLTOIMAGE, jsonObject.optString(KEY_URLTOIMAGE));
+                        map.put(KEY_PUBLISHEDAT, jsonObject.optString(KEY_PUBLISHEDAT));
                         dataList.add(map);
                     }
                 } catch (JSONException e) {
