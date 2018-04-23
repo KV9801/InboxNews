@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="30dp"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="ABOUT US"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="An intuitive and user-friendly app which sorts out a wide variety of news topics categorically, based on the user's preference. Additionally, it provides a large number of facts and trivia based on the user's interest and customisation."
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="CONTRIBUTORS"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="350dp"
+        android:layout_height="75dp"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_below="@+id/textView3"
+        android:fontFamily="cursive"
+        android:gravity="center"
+        android:text="Kaushik Vakadkar, Diya Purkayastha,      Harsh Sinha, Suchit Koli"
+        android:textSize="22sp" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="31dp"
+        android:layout_marginEnd="30dp"
+        app:srcCompat="@drawable/ic_share" />
+
+</RelativeLayout>
