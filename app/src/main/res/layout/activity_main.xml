@@ -9,7 +9,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bak2"
     android:gravity="center"
     tools:context="com.androidjson.inbox.MainActivity">
 
@@ -24,15 +23,13 @@
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Email"
-        android:inputType="textEmailAddress"
-        android:textColor="#000" />
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:hint="Enter Password"
-        android:textColor="#000"
         android:ems="10"
         android:layout_below="@+id/editEmail"
         android:layout_centerHorizontal="true"
@@ -58,10 +55,10 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="175dp"
+        android:layout_height="121dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@drawable/news" />
+        app:srcCompat="@drawable/news2" />
 
 </RelativeLayout>

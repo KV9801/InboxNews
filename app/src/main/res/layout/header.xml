@@ -3,26 +3,31 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
+    android:background="@drawable/bluewall2"
     android:orientation="vertical"
-    android:background="@drawable/newspaper_coffee"
+
     android:padding="20dp">
     <ImageView
-        android:src="@drawable/ic_person_black_24dp"
+        android:src="@drawable/prof3"
         android:layout_width="75dp"
+        android:layout_gravity="center"
         android:layout_height="75dp" />
+
     <TextView
         android:id="@+id/menu_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="5dp"
         android:text="First Last"
-        android:textColor="@color/colorDarkGrey"
-        android:textStyle="bold"
-        android:layout_margin="5dp"/>
+        android:layout_gravity="center"
+        android:textColor="@color/darkColorPrimaryDark"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/menu_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="sample@gmail.com"
-        android:textColor="@color/colorDarkGrey"/>
+        android:layout_gravity="center"
+        android:textColor="@color/darkColorPrimaryDark"/>
 
 </LinearLayout>

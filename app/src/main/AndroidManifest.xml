@@ -14,7 +14,7 @@
         android:icon="@drawable/appicon"
         android:label="Inbox News"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppThemeLight">
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,6 +32,12 @@
         <activity android:name=".HeaAPI" />
         <activity android:name=".SciAPI" />
         <activity android:name=".SpoAPI" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".FactsActivity" />
+        <activity android:name=".RandomFActivity" />
+        <activity android:name=".QuestFActivity" />
+        <activity android:name=".QuestFMenuActivity" />
+        <activity android:name=".AboutActivity"></activity>
     </application>
 
 </manifest>

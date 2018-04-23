@@ -18,7 +18,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TechAPI extends AppCompatActivity {
+public class TechAPI extends BaseActivity {
 
     //String API_KEY = "644018837a89457c927ee48389829b1e"; // ### YOUR NEWS API HERE ###
     //String NEWS_SOURCE = "bbc-news";
@@ -33,7 +33,7 @@ public class TechAPI extends AppCompatActivity {
     static final String KEY_URLTOIMAGE = "urlToImage";
     static final String KEY_PUBLISHEDAT = "publishedAt";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api);
 

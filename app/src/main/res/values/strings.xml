@@ -42,4 +42,38 @@
 
     <string name="title_activity_menu">ActivityMenu</string>
     <string name="confirm">Are you sure you want to logout?</string>
+
+    <string name="trivia">Trivia</string>
+    <string name="math">Math</string>
+    <string name="date">Date</string>
+    <string name="year">Year</string>
+
+    <string name="button_click_info">Click on any of the above buttons to get the facts.</string>
+    <string name="test_text">Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts.</string>
+    <string name="quest_facts">Quest Facts</string>
+    <string name="fun_facts">Fun Facts</string>
+    <string name="random_facts">Random Facts</string>
+    <string name="about_us">About Us</string>
+    <string name="this_day_that_year">This Day That Year</string>
+    <string-array name="month_array">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+    <string name="prefs_theme_key">theme</string>
+    <string name="change_theme">Change Theme</string>
+    <string name="no_internet_connection">No internet connection found</string>
+    <string name="please_try_different_number">Please try different number</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

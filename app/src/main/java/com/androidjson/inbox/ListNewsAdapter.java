@@ -1,6 +1,7 @@
 package com.androidjson.inbox;
 
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +14,11 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
-
 class ListNewsAdapter extends BaseAdapter {
     private Activity activity;
     private ArrayList<HashMap<String, String>> data;
 
-    public ListNewsAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
+    ListNewsAdapter(Activity a, ArrayList<HashMap<String, String>> d) {
         activity = a;
         data=d;
     }
@@ -62,12 +61,12 @@ class ListNewsAdapter extends BaseAdapter {
             holder.time.setText(song.get(TechAPI.KEY_PUBLISHEDAT));
             holder.sdetails.setText(song.get(TechAPI.KEY_DESCRIPTION));
 
-            if(song.get(TechAPI.KEY_URLTOIMAGE).toString().length() < 5)
+            if(song.get(TechAPI.KEY_URLTOIMAGE).length() < 5)
             {
                 holder.galleryImage.setVisibility(View.GONE);
             }else{
                 Picasso.with(activity)
-                        .load(song.get(TechAPI.KEY_URLTOIMAGE).toString())
+                        .load(song.get(TechAPI.KEY_URLTOIMAGE))
                         .resize(300, 200)
                         .into(holder.galleryImage);
             }
@@ -80,3 +79,4 @@ class ListNewsViewHolder {
     ImageView galleryImage;
     TextView author, title, sdetails, time;
 }
+

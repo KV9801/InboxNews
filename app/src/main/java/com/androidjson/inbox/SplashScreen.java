@@ -43,14 +43,14 @@ public class SplashScreen extends AppCompatActivity {
 
         }
 
-        //Wait for 6s
+        //Wait for time t
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 SplashScreen.this.startActivity(new Intent(SplashScreen.this,MainActivity.class));
                 SplashScreen.this.finish();
             }
-        },6000);  //6000 = 6 seconds
+        },1820);  //t = 1820 ms
 
     }
 }

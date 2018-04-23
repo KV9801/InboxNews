@@ -1,12 +1,19 @@
 package com.androidjson.inbox;
 
+import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.NavigationView.OnNavigationItemSelectedListener;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -17,16 +24,21 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class category extends AppCompatActivity implements OnNavigationItemSelectedListener {
+import com.androidjson.inbox.util.Utils;
+
+public class category extends BaseActivity implements OnNavigationItemSelectedListener {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
 
     TextView NameView, EmailView;
     String Name, Email;
-    CardView busi, ente, heal, scie, spor, tech;
+
+    TabLayout tablayout;
+    ViewPager viewpager;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
 
@@ -34,7 +46,16 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
         Email = intent.getStringExtra("email");
         Name = intent.getStringExtra("name");
 
-        //Add from here *********
+        tablayout = (TabLayout) findViewById(R.id.tablayout);
+        viewpager = (ViewPager) findViewById(R.id.viewpager);
+
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new Mainfrag(), "Categories");
+        adapter.addFragment(new Bookmark(), "Bookmarks");
+
+        viewpager.setAdapter(adapter);
+        tablayout.setupWithViewPager(viewpager);
+
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
         mDrawerLayout.addDrawerListener(mToggle);
@@ -42,65 +63,8 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
-        //To here ******
-
-        busi = (CardView) findViewById(R.id.bus);
-        ente = (CardView) findViewById(R.id.ent);
-        heal = (CardView) findViewById(R.id.hea);
-        scie = (CardView) findViewById(R.id.sci);
-        spor = (CardView) findViewById(R.id.spo);
-        tech = (CardView) findViewById(R.id.tec);
-
-        busi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i1 = new Intent(category.this, BusAPI.class);
-                startActivity(i1);
-            }
-        });
-
-        ente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i2 = new Intent(category.this, EntAPI.class);
-                startActivity(i2);
-            }
-        });
-
-        heal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i3 = new Intent(category.this, HeaAPI.class);
-                startActivity(i3);
-            }
-        });
-
-        scie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i4 = new Intent(category.this, SciAPI.class);
-                startActivity(i4);
-            }
-        });
-
-        spor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i5 = new Intent(category.this, SpoAPI.class);
-                startActivity(i5);
-            }
-        });
-
-        tech.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i6 = new Intent(category.this, TechAPI.class);
-                startActivity(i6);
-            }
-        });
     }
 
-    //From here also *****
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         NameView = (TextView) findViewById(R.id.menu_name);
@@ -116,19 +80,25 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
         return super.onOptionsItemSelected(item);
     }
 
+
+    public void recreateActivity()
+    {
+        Intent intent = getIntent();
+        intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(intent);
+        overridePendingTransition(0, 0);
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
         switch (id) {
-            case R.id.profile :
-                Toast.makeText(this,"This is profile",Toast.LENGTH_SHORT).show();
-                break;
             case R.id.aboutus :
-                Toast.makeText(this,"This is Aboutus",Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.settings :
-                Toast.makeText(this,"This is settings",Toast.LENGTH_SHORT).show();
+                Intent i9 = new Intent(category.this, AboutActivity.class);
+                startActivity(i9);
                 break;
             case R.id.logout :
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(category.this);
@@ -138,7 +108,8 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
                             @Override
                             public void onClick(DialogInterface dialogInterface, int i) {
                                 //End Activity
-                                finish();
+                                Intent main = new Intent(category.this, MainActivity.class);
+                                startActivity(main);
                             }
                         });
                 mBuilder.setNegativeButton("No", null);
@@ -146,16 +117,43 @@ public class category extends AppCompatActivity implements OnNavigationItemSelec
                 ad.setIcon(R.drawable.ic_sentiment_dissatisfied_black_24dp);
                 ad.show();
                 break;
+            case R.id.facts :
+                Intent i8 = new Intent(category.this, FactsActivity.class);
+                startActivity(i8);
+                break;
+            case R.id.contactus :
+
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
+                emailIntent.setData(Uri.parse("mailto:diyap@outlook.com"));
+                try {
+                    startActivity(emailIntent);
+                } catch (ActivityNotFoundException e) {
+                    //TODO: Handle case where no email app is available
+                }
+
+                break;
+            case R.id.change_theme:
+                int currentTheme = Utils.getTheme(category.this);
+                if (currentTheme <= 1)
+                {
+                    Utils.setTheme(category.this, 2);
+                }
+                else if (currentTheme == 2)
+                {
+                    Utils.setTheme(category.this, 1);
+                }
+
+                recreateActivity();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
         return false;
     }
-    //To here *******
-
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(this,"You have successfully logged out",Toast.LENGTH_SHORT).show();
     }
 }
 

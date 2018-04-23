@@ -18,7 +18,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class HeaAPI extends AppCompatActivity {
+public class HeaAPI extends BaseActivity {
 
     ListView listNews;
     ProgressBar loader;
@@ -31,7 +31,7 @@ public class HeaAPI extends AppCompatActivity {
     static final String KEY_URLTOIMAGE = "urlToImage";
     static final String KEY_PUBLISHEDAT = "publishedAt";
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_api);
 

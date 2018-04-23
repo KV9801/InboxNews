@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/profile"
-        android:icon="@drawable/ic_person_black_24dp"
-        android:title="Profile">
+    <item android:id="@+id/facts"
+        android:icon="@drawable/facts"
+        android:title="Fun Facts">
+    </item>
+
+    <item
+        android:id="@+id/change_theme"
+        android:icon="@drawable/ic_change_theme"
+        android:title="@string/change_theme"
+        app:showAsAction="always">
     </item>
 
     <item android:id="@+id/aboutus"
@@ -11,14 +19,13 @@
         android:title="About Us">
     </item>
 
-    <item android:id="@+id/settings"
-        android:icon="@drawable/ic_settings_black_24dp"
-        android:title="Settings">
+    <item android:id="@+id/contactus"
+        android:icon="@drawable/contact"
+        android:title="Contact Us">
     </item>
 
     <item android:id="@+id/logout"
         android:icon="@drawable/ic_subdirectory_arrow_left_black_24dp"
-        android:title="Logout">
-    </item>
+        android:title="Logout" />
 
 </menu>

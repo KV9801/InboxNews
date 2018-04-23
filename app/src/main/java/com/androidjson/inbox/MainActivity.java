@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     Button LogInButton, RegisterButton ;
     EditText Email, Password ;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     String NameString, TempPassword = "NOT_FOUND" ;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                // Opening new user registration activity using intent on button click.
+                // Opening newone user registration activity using intent on button click.
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);
 
