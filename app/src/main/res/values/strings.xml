@@ -52,6 +52,13 @@
     <string name="test_text">Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts. Click on any of the above buttons to get the facts.</string>
     <string name="quest_facts">Quest Facts</string>
     <string name="fun_facts">Fun Facts</string>
+    <string name="cat_bus">Business</string>
+    <string name="cat_ent">Entertainment</string>
+    <string name="cat_hea">Health</string>
+    <string name="cat_sci">Science</string>
+    <string name="cat_spo">Sport</string>
+    <string name="cat_tec">Technology</string>
+
     <string name="random_facts">Random Facts</string>
     <string name="about_us">About Us</string>
     <string name="this_day_that_year">This Day That Year</string>
