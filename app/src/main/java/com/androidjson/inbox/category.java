@@ -58,8 +58,8 @@ public class category extends BaseActivity implements OnNavigationItemSelectedLi
         viewpager.setAdapter(adapter);
         tablayout.setupWithViewPager(viewpager);
 
-        tablayout.getTabAt(0).setIcon(R.drawable.ic_apps_black_24dp);
-        tablayout.getTabAt(1).setIcon(R.drawable.ic_bookmark_black_24dp);
+        tablayout.getTabAt(0).setIcon(R.drawable.showmastertab4categories);
+        tablayout.getTabAt(1).setIcon(R.drawable.ribbon_2_512);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setElevation(0);
