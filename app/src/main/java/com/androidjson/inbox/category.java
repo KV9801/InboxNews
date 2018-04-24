@@ -15,6 +15,7 @@ import android.support.design.widget.NavigationView.OnNavigationItemSelectedList
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -49,12 +50,19 @@ public class category extends BaseActivity implements OnNavigationItemSelectedLi
         tablayout = (TabLayout) findViewById(R.id.tablayout);
         viewpager = (ViewPager) findViewById(R.id.viewpager);
 
+        //Adding fragments
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new Mainfrag(), "Categories");
         adapter.addFragment(new Bookmark(), "Bookmarks");
 
         viewpager.setAdapter(adapter);
         tablayout.setupWithViewPager(viewpager);
+
+        tablayout.getTabAt(0).setIcon(R.drawable.ic_apps_black_24dp);
+        tablayout.getTabAt(1).setIcon(R.drawable.ic_bookmark_black_24dp);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setElevation(0);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
         mToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);

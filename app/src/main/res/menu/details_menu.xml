@@ -6,4 +6,9 @@
         android:title="Share"
         app:showAsAction="never"
         />
+    <item
+        android:id="@+id/bookmark"
+        android:title="Bookmark"
+        app:showAsAction="never"
+        />
 </menu>
