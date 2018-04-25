@@ -22,7 +22,7 @@ public class AboutActivity extends BaseActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String message = "An intuitive and user-friendly app which not only sorts out a wide variety of news topics categorically based on the user's preference, but also provides various facts and trivia!\n\nDownload InboxNews now at bit.ly/InboxNews";
+                String message = "An intuitive and user-friendly app which not only sorts out a wide variety of news topics categorically based on the user's preference, but also provides various facts and trivia!\n\nDownload InboxNews now at https://goo.gl/JkQsfD";
                 Intent emailIntent = new Intent(Intent.ACTION_SEND);
                 emailIntent.putExtra(Intent.EXTRA_TEXT, message);
                 emailIntent.setAction(Intent.ACTION_SEND);
