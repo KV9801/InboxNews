@@ -132,7 +132,7 @@ public class category extends BaseActivity implements OnNavigationItemSelectedLi
             case R.id.contactus :
 
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
-                emailIntent.setData(Uri.parse("mailto:diyap@outlook.com"));
+                emailIntent.setData(Uri.parse("mailto:kva.923@gmail.com"));
                 try {
                     startActivity(emailIntent);
                 } catch (ActivityNotFoundException e) {
