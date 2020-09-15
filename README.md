@@ -3,7 +3,7 @@ An intuitive Android application for delivering personalized news and facts from
 
 See it in action:
 
-[![Demo Video](https://i9.ytimg.com/vi/QLx-1ErRkZU/mq3.jpg?sqp=CPyF9voF&rs=AOn4CLCszS5ccPuCwFrQ4A5ujXbHjC0fcQ)](https://youtu.be/QLx-1ErRkZU "Demo Video")
+[![Demo Video](http://img.youtube.com/vi/QLx-1ErRkZU/0.jpg)](https://www.youtube.com/watch?v=QLx-1ErRkZU "Demo Video")
 
 ## Features
 - User login and registration 
