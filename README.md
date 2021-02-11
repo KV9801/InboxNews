@@ -1,5 +1,5 @@
 # InboxNews
-An intuitive Android application for delivering personalized news and facts from any category of choice
+An intuitive Android application for delivering personalized news and facts from any category of choice.
 
 See it in action:
 
@@ -7,7 +7,7 @@ See it in action:
 
 ## Features
 - User login and registration 
-- 8 categories to choose from - Business, Entertainment, Health, Science, Sports, Technology
+- 6 categories to choose from - Business, Entertainment, Health, Science, Sports, Technology
 - Bookmark articles
 - Day/Night theme toggle
 - Facts and trivia
